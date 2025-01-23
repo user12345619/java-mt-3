@@ -6,7 +6,6 @@ import org.example.tunnel.City;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TrainParser {
     private static final String INPUT_FILENAME = "input.json";
@@ -26,6 +25,6 @@ public class TrainParser {
             throw new RuntimeException(e);
         }
 
-        return inputData.trains.stream().map((city) -> new Train(idGenerator.generateId(), city)).collect(Collectors.toList());
+        return inputData.trains.stream().map((city) -> new Train(idGenerator.generateId(), city)).toList();
     }
 }
